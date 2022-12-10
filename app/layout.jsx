@@ -1,4 +1,7 @@
-import './globals.css'
+import "./globals.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "@popperjs/core";
+// import "bootstrap/dist/js/bootstrap.bundle";
 
 export default function RootLayout({ children }) {
   return (
@@ -10,5 +13,5 @@ export default function RootLayout({ children }) {
       <head />
       <body>{children}</body>
     </html>
-  )
+  );
 }
