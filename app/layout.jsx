@@ -1,5 +1,6 @@
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "react-loading-skeleton/dist/skeleton.css";
 import "@popperjs/core";
 // import "bootstrap/dist/js/bootstrap.bundle";
 

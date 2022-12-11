@@ -2,12 +2,14 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Poppins;
   background-color: #0d111c;
 }
 .navbar {
   background-color: #131b28;
+}
+* {
+  font-family: Poppins;
 }
 .imgCarousel {
   width: 100%;
@@ -61,4 +63,8 @@ body {
 }
 .search:hover {
   border-bottom: rgb(209, 22, 91);
+}
+
+a.page-link {
+  background-color: #0d111c;
 }

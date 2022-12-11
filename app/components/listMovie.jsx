@@ -1,21 +1,18 @@
-"use client";
 import React from "react";
 import Pagination from "./pagination";
-import useSWR from "swr";
 import Loading from "../loading";
-import { useState, useEffect } from "react";
 
-// const API = process.env.API_KEY;
+const API = process.env.API_KEY;
 // console.log(API, "api key");
-// async function getMovie() {
-//   const res = await fetch(
-//     `https://api.themoviedb.org/3/movie/popular/?api_key=${API}`
-//   );
-//   if (!res.ok) {
-//     throw new Error("error fetching data");
-//   }
-//   return res.json();
-// }
+async function getMovie() {
+  const res = await fetch(
+    `https://api.themoviedb.org/3/movie/popular/?api_key=${API}`
+  );
+  if (!res.ok) {
+    throw new Error("error fetching data");
+  }
+  return res.json();
+}
 
 // async function getMovieSearch(q) {
 //   const res = await fetch(
@@ -27,22 +24,8 @@ import { useState, useEffect } from "react";
 //   return res.json();
 // }
 
-export default function ListMovie() {
-  const [tambah, setTambah] = useState(1);
-  const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  const { data, error, isLoading } = useSWR(
-    `https://api.themoviedb.org/3/movie/popular/?api_key=1b81f32a1b275e662103b44eb3211c4f`,
-    fetcher
-  );
-  if (!data) {
-    return (
-      <div>
-        <Loading />
-      </div>
-    );
-  }
-  console.log(data, "<dataaaa");
-  // let movie = await getMovie();
+export default async function ListMovie() {
+  let movie = await getMovie();
 
   // const search = async (q) => {
   //   const query = await getMovieSearch(q);
@@ -87,7 +70,7 @@ export default function ListMovie() {
         </form>
       </div>
       <div className="row">
-        {data.results.map((movi, idx) => (
+        {movie.results.map((movi, idx) => (
           <div className=" col-sm-6 col-md-5 col-lg-4 colom mb-3" key={movi.id}>
             <div className="card">
               <img

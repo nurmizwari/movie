@@ -3,7 +3,7 @@ export default function Navbar() {
     <nav class="navbar fixed-top navbar-expand-lg text-light">
       <div class="container-fluid">
         <a class="navbar-brand text-light" href="#">
-          FilmKu
+          Movie App
         </a>
         <button
           class="navbar-toggler"
@@ -16,7 +16,7 @@ export default function Navbar() {
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        {/* <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <form class="d-flex" role="search">
             <input
               class="search text-light"
@@ -37,7 +37,7 @@ export default function Navbar() {
               </svg>
             </button>
           </form>
-        </div>
+        </div> */}
       </div>
     </nav>
   );
